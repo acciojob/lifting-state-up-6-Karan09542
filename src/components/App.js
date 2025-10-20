@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import "./../styles/App.css";
-
-const TodoList = ({ task, isCompleted, updateTodo, idx }) => {
-  return (
-    <li>
-      {task} {!isCompleted && <button onClick={() => updateTodo(idx)}>Completed</button>}
-    </li>
-  );
-};
+import TodoList from "./TodoList";
 const App = () => {
   const [todos, setTodos] = useState([
     { task: "Learn React", isCompleted: false },
@@ -23,11 +16,8 @@ const App = () => {
   return (
     <div>
       {/* Do not remove the main div */}
-      <ul>
-        {todos.map((todo, idx) => (
-          <TodoList {...todo} updateTodo={handleCompleted} idx={idx} />
-        ))}
-      </ul>
+      <h1>Parent Component</h1>
+      <TodoList todos={todos} updateTodos={handleCompleted}/>
     </div>
   );
 };
