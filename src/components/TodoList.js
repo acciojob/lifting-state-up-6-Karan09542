@@ -1,5 +1,5 @@
 import React from "react";
-const TodoList = ({ todos, updateTodos }) => {
+const TodoList = ({ todos, handleComplete }) => {
   return (
     <div style={{marginRight: "5px"}}>
     <h2>Child Component</h2>
@@ -9,7 +9,7 @@ const TodoList = ({ todos, updateTodos }) => {
             
           {task}{" "}
           {!isCompleted && (
-            <button onClick={() => updateTodos(idx)}>Completed</button>
+            <button onClick={() => handleComplete(idx)}>Completed</button>
           )}
         </li>
       ))}

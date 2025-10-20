@@ -8,7 +8,7 @@ const App = () => {
     { task: "Deploy the React app", isCompleted: false },
   ]);
 
-  function handleCompleted(id) {
+  function handleComplet(id) {
     const updateTodos = [...todos];
     updateTodos[id].isCompleted = true;
     setTodos(updateTodos);
