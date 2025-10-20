@@ -4,10 +4,10 @@ const TodoList = ({ todos, handleComplete }) => {
     <div style={{marginRight: "5px"}}>
     <h2>Child Component</h2>
     <ul>
-      {todos.map(({ task, isCompleted }, idx) => (
+      {todos.map(({ task, mark }, idx) => (
         <li key={idx}>
           {task}{" "}
-          {!isCompleted && (
+          {!mark && (
             <button onClick={() => handleComplete(idx)}>Complete</button>
           )}
         </li>
