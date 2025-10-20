@@ -5,7 +5,8 @@ const TodoList = ({ todos, updateTodos }) => {
     <h2>Child Component</h2>
     <ul>
       {todos.map(({ task, isCompleted }, idx) => (
-        <li>
+        <li key={idx}>
+            
           {task}{" "}
           {!isCompleted && (
             <button onClick={() => updateTodos(idx)}>Completed</button>
